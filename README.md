@@ -29,7 +29,7 @@ CLI buka terminal/command prompt.
 
 <img width="800" height="400" alt="Cuplikan layar 2026-03-30 110347" src="https://github.com/user-attachments/assets/4c0ec1fd-38da-4ea8-938d-1d6f39bef09b" />
 
-<img width="800 height="400" alt="Cuplikan layar 2026-03-30 110453" src="https://github.com/user-attachments/assets/d938b37b-a4e4-42fd-add1-3ef0bf6c1c40" />
+<img width="800" height="400" alt="Cuplikan layar 2026-03-30 110453" src="https://github.com/user-attachments/assets/d938b37b-a4e4-42fd-add1-3ef0bf6c1c40" />
 
 
 ## Mengaktifkan Mode Debugging
@@ -57,6 +57,7 @@ app/Controller/Home.php hilangkan titik koma pada akhir kode.**
 <img width="800" height="400" alt="Cuplikan layar 2026-03-30 140400" src="https://github.com/user-attachments/assets/cf99e39c-0669-4c0f-8f7a-eb550167c8fd" />
 
 <img width="800" height="400" alt="Cuplikan layar 2026-03-30 140410" src="https://github.com/user-attachments/assets/10ded210-ee0a-49ff-866e-0f39fd9e10f3" />
+
 
 <img width="800" height="600" alt="Cuplikan layar 2026-03-30 140556" src="https://github.com/user-attachments/assets/b40fcd27-cb14-4f93-b205-94dbcff4a5c6" />
 
