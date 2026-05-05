@@ -3,6 +3,8 @@ Nama: Nadine Amelia Putri
 
 Nim: 312410188
 
+# Praktikum 1 
+
 ## Konfigurasi Ekstensi PHP
 **- Buka XAMPP Control Panel → Apache → Config → PHP.ini**
 
