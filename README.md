@@ -179,11 +179,17 @@ dan javascript terletak pada direktori public.**
 
 **- Pada praktikum ini kita gunakan konfigurasi pada file .env pada root proyek CI4 (C:\xampp\htdocs\lab11_ci\ci4)**
 
+**- Pada Tahapan ini berperan penting agar aplikasi bisa terhubung ke database.**
+
 ## 3. Membuat Model Artikel
 **- Buat file app/Models/ArtikelModel.php**
 
+**- Model ini akan digunakan untuk mengambil, menyimpan, mengupdate, dan menghapus data dari tabel artikel**
+
 ## 4. Membuat Controller Artikel
 **- Buat file app/Controllers/Artikel.php**
+
+**- Method index(): Memanggil model, mengambil semua data artikel dengan findAll(), lalu mengirim ke view artikel/index.**
 
 ## 5. Membuat View Index Artikel
 **- Buat folder app/Views/artikel/**
@@ -192,34 +198,46 @@ dan javascript terletak pada direktori public.**
 
 **- Buat folder template untuk header dan footer**
 
+<img width="1397" height="937" alt="Cuplikan layar 2026-04-01 100559" src="https://github.com/user-attachments/assets/49e19bf4-7e38-4605-895b-6c1928c76f95" />
+
 
 ## 6. Menambahkan Data Awal ke Database
 **- Jalankan SQL melalui phpMyAdmin atau CLI:**
 **Akses** ``http://localhost:8080/artikel``
 
+<img width="800" height="400" alt="Cuplikan layar 2026-04-01 101248" src="https://github.com/user-attachments/assets/00d225b2-e556-446d-a914-ab479b655037" />
+
+<img width="800" height="400" alt="Cuplikan layar 2026-04-01 101452" src="https://github.com/user-attachments/assets/b60c3551-e3eb-488e-84fc-5f2f5f01b131" />
+
 
 ## 7. Menambahkan Method view di Controller
-**- Tambahkan kode di Artikel.php, untuk menghasilkan berikut**
+**- Tambahkan kode di Artikel.php**
 
 ## 8. Membuat View Detail
-**- Buat file app/Views/artikel/detail.php**
+**- Buat file app/Views/artikel/detail.php, untuk menghasilkan berikut**
+
+<img width="800" height="400" alt="Cuplikan layar 2026-04-08 153524" src="https://github.com/user-attachments/assets/5ed805fe-f407-45b7-a983-3f489ea47d80" />
 
 ## 9. Menambahkan Routing untuk Detail
 **- Buka app/config/Routes.php**
 
 **- Klik judul artikel di halaman daftar, seharusnya menampilkan detail.**
 
+<img width="800" height="400" alt="Cuplikan layar 2026-04-08 153542" src="https://github.com/user-attachments/assets/1e812d76-c3f9-44c0-9b77-116b37881fef" />
+
 
 ## Membuat Menu Admin (CRUD)
 ## 10. Menambahkan Method admin_index
 ## 11. Membuat View Admin Index
 **- Buat file app/Views/artikel/admin_index.php**
-
 **- Tambahkan template admin_header dan admin_footer**
 
 ## 12. Routing untuk Group Admin
 **- Tambahkan code di Routes.php**
 **Akses** ``http://localhost:8080/admin/artikel``
+
+<img width="800" height="400" alt="Cuplikan layar 2026-04-06 161153" src="https://github.com/user-attachments/assets/cd984632-169e-45e6-a074-bab3424068b2" />
+
 
 ## 13. Menambah Data (Method add)
 **- Menambahkan code di Artikel.php**
@@ -228,12 +246,18 @@ dan javascript terletak pada direktori public.**
 
 **- Coba tambah artikel baru, lalu cek di halaman admin dan di halaman depan.**
 
+<img width="800" height="400" alt="Cuplikan layar 2026-04-06 162411" src="https://github.com/user-attachments/assets/12cb61c8-fd83-44f9-b078-6e2067cfac40" />
+
+
 ## 14. Mengubah Data (Method edit)
 **- Menambahkan code di Artikel.php**
 
 **- Buat view form_edit.php:**
 
 **Uji coba ubah data, pastikan berhasil.**
+
+<img width="800" height="400" alt="Cuplikan layar 2026-04-09 145237" src="https://github.com/user-attachments/assets/7b204eb0-8d63-4eeb-9557-7564a5f6f611" />
+
 
 ## 15. Menghapus Data (Method delete)
 **- Menambahkan code di Artikel.php**
