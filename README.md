@@ -198,17 +198,14 @@ dan javascript terletak pada direktori public.**
 
 **- Buat folder template untuk header dan footer**
 
-<img width="1397" height="937" alt="Cuplikan layar 2026-04-01 100559" src="https://github.com/user-attachments/assets/49e19bf4-7e38-4605-895b-6c1928c76f95" />
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/58223988-7aa8-4fd2-a8de-3cc3ca8678d2" />
 
 
 ## 6. Menambahkan Data Awal ke Database
 **- Jalankan SQL melalui phpMyAdmin atau CLI:**
 **Akses** ``http://localhost:8080/artikel``
 
-<img width="800" height="400" alt="Cuplikan layar 2026-04-01 101248" src="https://github.com/user-attachments/assets/00d225b2-e556-446d-a914-ab479b655037" />
-
-<img width="800" height="400" alt="Cuplikan layar 2026-04-01 101452" src="https://github.com/user-attachments/assets/b60c3551-e3eb-488e-84fc-5f2f5f01b131" />
-
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/b44b36ee-45b4-437f-81bb-c21496181769" />
 
 ## 7. Menambahkan Method view di Controller
 **- Tambahkan kode di Artikel.php**
@@ -216,14 +213,14 @@ dan javascript terletak pada direktori public.**
 ## 8. Membuat View Detail
 **- Buat file app/Views/artikel/detail.php, untuk menghasilkan berikut**
 
-<img width="800" height="400" alt="Cuplikan layar 2026-04-08 153524" src="https://github.com/user-attachments/assets/5ed805fe-f407-45b7-a983-3f489ea47d80" />
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/214570c9-b475-4be5-93b0-0cf928a73e0f" />
 
 ## 9. Menambahkan Routing untuk Detail
 **- Buka app/config/Routes.php**
 
 **- Klik judul artikel di halaman daftar, seharusnya menampilkan detail.**
 
-<img width="800" height="400" alt="Cuplikan layar 2026-04-08 153542" src="https://github.com/user-attachments/assets/1e812d76-c3f9-44c0-9b77-116b37881fef" />
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/a9707b64-909e-4145-a897-bc28d054505f" />
 
 
 ## Membuat Menu Admin (CRUD)
@@ -236,7 +233,7 @@ dan javascript terletak pada direktori public.**
 **- Tambahkan code di Routes.php**
 **Akses** ``http://localhost:8080/admin/artikel``
 
-<img width="800" height="400" alt="Cuplikan layar 2026-04-06 161153" src="https://github.com/user-attachments/assets/cd984632-169e-45e6-a074-bab3424068b2" />
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/becb523b-d0e5-46fa-a938-b922b435fae8" />
 
 
 ## 13. Menambah Data (Method add)
@@ -246,8 +243,9 @@ dan javascript terletak pada direktori public.**
 
 **- Coba tambah artikel baru, lalu cek di halaman admin dan di halaman depan.**
 
-<img width="800" height="400" alt="Cuplikan layar 2026-04-06 162411" src="https://github.com/user-attachments/assets/12cb61c8-fd83-44f9-b078-6e2067cfac40" />
+<img width="800" height="400 alt="image" src="https://github.com/user-attachments/assets/c742065d-61ee-49e7-bfe5-9b5573168ea1" />
 
+<img width="800 height="400" alt="image" src="https://github.com/user-attachments/assets/4e6cf3fd-686a-4566-a273-dcd466ee041c" />
 
 ## 14. Mengubah Data (Method edit)
 **- Menambahkan code di Artikel.php**
@@ -256,13 +254,17 @@ dan javascript terletak pada direktori public.**
 
 **Uji coba ubah data, pastikan berhasil.**
 
-<img width="800" height="400" alt="Cuplikan layar 2026-04-09 145237" src="https://github.com/user-attachments/assets/7b204eb0-8d63-4eeb-9557-7564a5f6f611" />
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/d388446c-b557-4bb7-a376-06d75a158a33" />
 
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/3b4a6f04-ced7-4613-9c2e-e6b8eaec0138" />
 
 ## 15. Menghapus Data (Method delete)
 **- Menambahkan code di Artikel.php**
 
 **- Coba klik tombol Hapus pada halaman admin, konfirmasi, lalu data terhapus.**
 
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/b66bfb60-0218-4333-b45d-bbdb2262897d" />
+
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/58efc6ea-6a1f-4094-bfc5-ca11b8f1eba8" />
 
 
