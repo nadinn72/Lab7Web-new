@@ -268,3 +268,205 @@ dan javascript terletak pada direktori public.**
 <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/58efc6ea-6a1f-4094-bfc5-ca11b8f1eba8" />
 
 
+# Praktikum 3
+
+## 1 Membuat Layout Utama
+**Buat folder layout di dalam app/Views/**
+
+**Buat file main.php di dalam folder layout dengan kode berikut:**
+
+**Layout ini akan digunakan untuk semua halaman agar tampilan konsisten (header, nav, sidebar, footer).**
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $title ?? 'My Website' ?></title>
+    <link rel="stylesheet" href="<?= base_url('/style.css');?>">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Layout Sederhana</h1>
+    </header>
+    <nav>
+        <a href="<?= base_url('/');?>" class="active">Home</a>
+        <a href="<?= base_url('/artikel');?>">Artikel</a>
+        <a href="<?= base_url('/about');?>">About</a>
+        <a href="<?= base_url('/contact');?>">Kontak</a>
+    </nav>
+    <section id="wrapper">
+        <section id="main">
+                <?= $this->renderSection('content') ?>
+            </section>
+            <aside id="sidebar">
+                <?= view_cell('App\\Cells\\ArtikelTerkini::render') ?>
+                <div class="widget-box">
+                    <h3 class="title">Widget Header</h3>
+                    <ul>
+                        <li><a href="#">Widget Link</a></li>
+                        <li><a href="#">Widget Link</a></li>
+                    </ul>
+                </div>
+                <div class="widget-box">
+                    <h3 class="title">Widget Text</h3>
+                    <p>Vestibulum lorem elit, iaculis in nisl volutpat,
+                    malesuada tincidunt arcu. Proin in leo fringilla,
+                    vestibulum mi porta,
+                    faucibus felis. Integer pharetra est nunc, nec pretium
+                    nunc pretium ac.</p>
+                </div>          
+            </aside>
+        </section>
+        <footer>
+            <p>&copy; 2026 - Universitas Pelita Bangsa</p>
+        </footer>
+    </div>
+</body>
+</html>
+```
+
+## 2. Modifikasi File View
+**Ubah app/Views/home.php agar sesuai dengan layout baru:**
+
+**Sesuaikan juga untuk halaman lainnya yang ingin menggunakan format layout yang baru.**
+
+```
+<?= $this->extend('layout/main') ?>
+<?= $this->section('content') ?>
+<h1><?= $title; ?></h1>
+<hr>
+<p><?= $content; ?></p>
+<?= $this->endSection() ?>
+```
+
+## 3. Menampilkan Data Dinamis dengan View Cell
+**View Cell adalah fitur yang memungkinkan pemanggilan tampilan dalam bentuk komponen
+yang dapat digunakan ulang. Cocok digunakan untuk elemen-elemen yang sering muncul di
+berbagai halaman seperti sidebar, widget, atau menu navigasi.**
+
+## a. Membuat Class View Cell
+**Buat folder Cells di dalam app/**
+
+**Buat file ArtikelTerkini.php di dalam app/Cells/ dengan kode berikut:**
+
+```
+<?php
+
+namespace App\Cells;
+
+use CodeIgniter\View\Cells\Cell;
+use App\Models\ArtikelModel;
+
+class ArtikelTerkini extends Cell
+{
+    protected $kategori = null;
+    protected $limit = 5;
+
+    public function mount($kategori = null, $limit = 5)
+    {
+        $this->kategori = $kategori;
+        $this->limit = $limit;
+    }
+
+    public function render()
+    {
+        $model = new ArtikelModel();
+        
+        $query = $model->orderBy('created_at', 'DESC');
+        
+        // Filter berdasarkan kategori (bisa dikembangkan dengan menambah kolom kategori)
+        if ($this->kategori) {
+            $query->like('judul', $this->kategori);
+        }
+        
+        $artikel = $query->findAll($this->limit);
+        
+        return view('components/artikel_terkini', [
+            'artikel' => $artikel,
+            'kategori' => $this->kategori
+        ]);
+    }
+}
+```
+
+## b. Membuat View untuk View Cell
+**Buat folder components di dalam app/Views/**
+
+**Buat file artikel_terkini.php di dalam app/Views/components/ dengan kode berikut:**
+
+```
+<div class="widget-box">
+    <h3 class="title">
+        Artikel Terkini 
+        <?= $kategori ? "<small>($kategori)</small>" : '' ?>
+    </h3>
+    <ul>
+        <?php if (!empty($artikel)): ?>
+            <?php foreach ($artikel as $row): ?>
+                <li>
+                    <a href="<?= base_url('/artikel/' . $row['slug']); ?>">
+                        <?= esc($row['judul']); ?>
+                    </a>
+                    <br>
+                    <small><?= date('d/m/Y', strtotime($row['created_at'])); ?></small>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <li>Belum ada artikel</li>
+        <?php endif; ?>
+    </ul>
+</div>
+```
+
+# Pertanyaan dan Tugas Praktikum 3
+
+## A. Apa manfaat utama dari penggunaan View Layout dalam pengembangan aplikasi?
+
+**Manfaat utama View Layout:**
+
+- Konsistensi Tampilan - Seluruh halaman memiliki struktur header, footer, dan sidebar yang sama
+
+- Efisiensi Kode - Tidak perlu menulis ulang kode template yang sama di setiap halaman
+
+- Kemudahan Maintenance - Perubahan pada layout cukup dilakukan di satu file
+
+- Modularitas - Memisahkan konten utama dari struktur template
+
+- Reusability - Komponen layout dapat digunakan kembali di berbagai halaman
+
+- DRY Principle (Don't Repeat Yourself) - Menghindari duplikasi kode
+
+## B. Jelaskan perbedaan antara View Cell dan View biasa
+
+**View Biasa**
+
+View biasa adalah tampilan untuk halaman utuh, seperti halaman home, artikel, atau about. Semua data dan logika disiapkan oleh Controller. View ini tidak bisa berdiri sendiri karena bergantung pada Controller. Jika ingin dipakai ulang, harus di-include secara manual. Cocok untuk halaman yang utuh dan sederhana.
+
+**View Cell**
+
+View cell adalah komponen kecil yang mandiri, seperti sidebar, widget, atau menu dinamis. Dia bisa memproses datanya sendiri tanpa bantuan Controller. Cukup panggil dengan fungsi view_cell() kapan saja dan di mana saja. View cell mudah dipindahkan antar proyek karena semua logika sudah terbungkus dalam kelas Cell sendiri.
+
+## C. Cara mengubah View Cell agar hanya menampilkan post dengan kategori tertentu
+
+**Sudah diimplementasikan pada class ArtikelTerkini di atas. Berikut contoh penggunaannya:**
+
+```
+php
+// Memanggil View Cell dengan filter kategori tertentu
+<?= view_cell('App\\Cells\\ArtikelTerkini::render', ['kategori' => 'teknologi']) ?>
+<?= view_cell('App\\Cells\\ArtikelTerkini::render', ['kategori' => 'pendidikan']) ?>
+
+// Tanpa filter (menampilkan semua)
+
+<?= view_cell('App\\Cells\\ArtikelTerkini::render') ?>
+```
+
+**Penjelasan implementasi:**
+
+- Menambahkan properti $kategori pada class Cell
+
+- Method mount($kategori = null) untuk menerima parameter
+
+- Query menggunakan where('kategori', $this->kategori) jika parameter diberikan
