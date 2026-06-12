@@ -241,20 +241,25 @@ dan javascript terletak pada direktori public.**
 
 **- Buat view form_add.php di app/Views/artikel/:**
 
-**- Coba tambah artikel baru, lalu cek di halaman admin dan di halaman depan.**
+**- Coba tambah artikel baru,**
 
-<img width="800" height="400 alt="image" src="https://github.com/user-attachments/assets/c742065d-61ee-49e7-bfe5-9b5573168ea1" />
+<img width="800" height="400" alt="Cuplikan layar 2026-05-22 120511" src="https://github.com/user-attachments/assets/d06cd669-ae29-43c4-8675-ca27139e1cae" />
 
-<img width="800 height="400" alt="image" src="https://github.com/user-attachments/assets/4e6cf3fd-686a-4566-a273-dcd466ee041c" />
+**- lalu cek di halaman admin dan di halaman depan.**
+
+<img width="800" height="400" alt="Cuplikan layar 2026-05-22 120547" src="https://github.com/user-attachments/assets/354c2bee-fbfb-4265-be98-76ba2bc460cf" />
+
 
 ## 14. Mengubah Data (Method edit)
 **- Menambahkan code di Artikel.php**
 
 **- Buat view form_edit.php:**
 
-**Uji coba ubah data, pastikan berhasil.**
+**Uji coba ubah data,**
 
 <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/d388446c-b557-4bb7-a376-06d75a158a33" />
+
+**- Memastikan bahwa berhasil mengubah data**
 
 <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/3b4a6f04-ced7-4613-9c2e-e6b8eaec0138" />
 
