@@ -475,3 +475,100 @@ php
 - Method mount($kategori = null) untuk menerima parameter
 
 - Query menggunakan where('kategori', $this->kategori) jika parameter diberikan
+
+
+# Praktikum 4
+
+## 1.  Membuat Tabel User
+Membuat tabel baru bernama user di dalam database.
+Struktur tabel terdiri dari:
+id : sebagai primary key dan auto increment
+username : untuk menyimpan nama pengguna
+useremail : untuk menyimpan alamat email
+userpassword : untuk menyimpan password yang akan di-hash
+Tabel ini berfungsi sebagai tempat penyimpanan data akun pengguna yang akan melakukan login.
+
+<img width="1622" height="452" alt="Cuplikan layar 2026-04-01 100813" src="https://github.com/user-attachments/assets/db0838ec-1ccb-43f4-9415-4c95741c66d3" />
+
+## 2. Membuat Model User
+Membuat file model dengan nama UserModel di dalam direktori app/Models.
+Model ini menghubungkan aplikasi dengan tabel user di database.
+Mendefinisikan tabel yang digunakan, primary key, dan field-field yang boleh diisi (username, useremail, userpassword).
+Model ini akan digunakan untuk melakukan operasi database seperti mengambil data pengguna berdasarkan email.
+
+## 3. Membuat Controller User
+Membuat controller baru bernama User di dalam direktori app/Controllers.
+Di dalam controller ini terdapat dua method utama:
+
+**a. Method index()**
+
+Berfungsi untuk menampilkan daftar seluruh pengguna yang terdaftar.
+Mengambil semua data user dari database melalui model.
+Menampilkan data tersebut ke dalam view.
+
+**b. Method login()**
+
+Berfungsi untuk menangani proses login.
+Jika belum ada data yang dikirim (email kosong), maka akan menampilkan form login.
+Jika email sudah diisi, sistem akan melakukan pencarian data pengguna berdasarkan email yang dimasukkan.
+Jika email ditemukan, sistem akan memeriksa kecocokan password menggunakan fungsi verifikasi hash.
+Jika password cocok, sistem akan menyimpan data sesi (user id, username, email, dan status logged_in) dan mengarahkan ke halaman admin.
+Jika password salah, akan muncul pesan error "Password salah".
+Jika email tidak ditemukan, akan muncul pesan error "Email tidak terdaftar".
+Pesan error ditampilkan menggunakan flash message.
+
+
+## 4. Membuat View Login
+Membuat direktori baru bernama user di dalam app/views.
+Membuat file login.php sebagai halaman login.
+Halaman login berisi:
+Form dengan dua input: email dan password.
+Tombol login untuk mengirimkan data.
+Area untuk menampilkan flash message jika terjadi error.
+Tampilan menggunakan CSS sederhana yang sudah disediakan.
+
+## 5. Membuat Database Seeder
+Membuat seeder dengan nama UserSeeder melalui command line (CLI).
+Seeder berfungsi untuk mengisi data dummy ke dalam database.
+Data yang dimasukkan adalah satu akun contoh:
+Username: admin
+Email: admin@email.com
+Password: admin123 (akan di-hash sebelum disimpan)
+Menjalankan seeder melalui CLI agar data langsung masuk ke tabel user di database.
+
+## 6. Uji Coba Login
+Membuka halaman login melalui browser (http://localhost:8080/user/login).
+Mencoba login dengan akun yang sudah dibuat melalui seeder.
+Jika berhasil, akan diarahkan ke halaman admin.
+Jika gagal, akan muncul pesan error sesuai penyebabnya (password salah atau email tidak terdaftar).
+
+<img width="800" height="400" alt="Cuplikan layar 2026-06-11 143029" src="https://github.com/user-attachments/assets/2963e77b-0f6d-4030-8cfc-7a450b1f16ba" />
+
+8. Menambahkan Auth Filter
+Membuat file filter baru bernama Auth di dalam direktori app/Filters.
+Filter ini berfungsi untuk melakukan pengecekan sebelum mengakses halaman tertentu.
+
+9. Percobaan Akses Menu Admin
+Membuka url halaman admin (http://localhost:8080/admin/artikel) secara langsung tanpa login terlebih dahulu.
+Karena filter Auth sudah aktif, maka secara otomatis akan diarahkan ke halaman login.
+Setelah login berhasil, baru bisa mengakses halaman admin tersebut.
+
+<img width="800" height="400" alt="Cuplikan layar 2026-06-11 143237" src="https://github.com/user-attachments/assets/6c222b87-662f-4fb7-af38-b7a95e2aabda" />
+
+11. Fungsi Logout
+Menambahkan method logout pada controller User.
+Fungsi logout bekerja dengan:
+Menghapus semua data sesi yang tersimpan (session destroy).
+Mengarahkan pengguna kembali ke halaman login.
+Dengan demikian, setelah logout, pengguna tidak bisa mengakses halaman admin lagi sampai login ulang.
+
+<img width="800" height="400" alt="Cuplikan layar 2026-06-11 143237" src="https://github.com/user-attachments/assets/6832b94f-bd8a-44c3-948a-fa16a1f5832b" />
+
+
+
+
+Berikut adalah praktikum 5-7
+
+
+
+
