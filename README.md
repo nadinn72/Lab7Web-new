@@ -567,7 +567,10 @@ Dengan demikian, setelah logout, pengguna tidak bisa mengakses halaman admin lag
 
 
 
-Berikut adalah praktikum 5-7
+Berikut adalah praktikum 5-14
+
+https://github.com/nadinn72/Lab11Web_VueJS.git
+
 
 
 
