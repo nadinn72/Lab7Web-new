@@ -544,18 +544,18 @@ Jika gagal, akan muncul pesan error sesuai penyebabnya (password salah atau emai
 
 <img width="800" height="400" alt="Cuplikan layar 2026-06-11 143029" src="https://github.com/user-attachments/assets/2963e77b-0f6d-4030-8cfc-7a450b1f16ba" />
 
-8. Menambahkan Auth Filter
+## 7. Menambahkan Auth Filter
 Membuat file filter baru bernama Auth di dalam direktori app/Filters.
 Filter ini berfungsi untuk melakukan pengecekan sebelum mengakses halaman tertentu.
 
-9. Percobaan Akses Menu Admin
+## 8. Percobaan Akses Menu Admin
 Membuka url halaman admin (http://localhost:8080/admin/artikel) secara langsung tanpa login terlebih dahulu.
 Karena filter Auth sudah aktif, maka secara otomatis akan diarahkan ke halaman login.
 Setelah login berhasil, baru bisa mengakses halaman admin tersebut.
 
 <img width="800" height="400" alt="Cuplikan layar 2026-06-11 143237" src="https://github.com/user-attachments/assets/6c222b87-662f-4fb7-af38-b7a95e2aabda" />
 
-11. Fungsi Logout
+## 9. Fungsi Logout
 Menambahkan method logout pada controller User.
 Fungsi logout bekerja dengan:
 Menghapus semua data sesi yang tersimpan (session destroy).
@@ -567,7 +567,7 @@ Dengan demikian, setelah logout, pengguna tidak bisa mengakses halaman admin lag
 
 
 
-Berikut adalah praktikum 5-14
+## Berikut adalah praktikum 5-14
 
 https://github.com/nadinn72/Lab11Web_VueJS.git
 
